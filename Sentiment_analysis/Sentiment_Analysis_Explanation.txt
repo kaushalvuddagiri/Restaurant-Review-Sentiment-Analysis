@@ -1,0 +1,40 @@
+
+📌 1. Importing Libraries
+-------------------------
+Libraries like pandas, nltk, re, matplotlib, pickle, and joblib are imported. They help in handling data, cleaning text, plotting results, and loading pre-trained models.
+
+📌 2. Download NLTK Stopwords
+-----------------------------
+The NLTK stopwords list is downloaded to remove common English words like "the", "is", etc. We keep "not" because it's important for detecting sentiment.
+
+📌 3. Define a Text Cleaning Function
+-------------------------------------
+The clean_text() function removes punctuation, converts text to lowercase, removes stopwords, and applies stemming (e.g., "loved" → "love").
+
+📌 4. Load the Dataset
+-----------------------
+The dataset is loaded from a .tsv file (tab-separated format) using pandas. It contains restaurant reviews.
+
+📌 5. Clean the Reviews
+------------------------
+Each review in the first 100 is passed through the clean_text() function to prepare it for model input.
+
+📌 6. Load Trained Model & Vectorizer
+-------------------------------------
+A Bag-of-Words model (CountVectorizer) and a trained sentiment classifier are loaded using pickle and joblib.
+
+📌 7. Transform Text and Predict Sentiments
+-------------------------------------------
+The cleaned reviews are converted to vectors using CountVectorizer and then passed to the classifier to predict sentiment (0 = Negative, 1 = Positive).
+
+📌 8. Add Predictions and Save
+------------------------------
+The predictions are added to the dataset as a new column and saved into a new .tsv file.
+
+📌 9. Visualize Sentiment Counts
+--------------------------------
+Counts of positive and negative reviews are calculated using value_counts().
+
+📌 10. Plot the Bar Chart
+--------------------------
+A bar chart is created using matplotlib to show the number of positive and negative reviews.
